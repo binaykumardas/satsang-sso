@@ -3,15 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { SsoAuthenticationRoutingModule } from './sso-authentication-routing.module';
 import { SsoLoginComponent } from './sso-login/sso-login.component';
-
+// import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
-  declarations: [
-    SsoLoginComponent
-  ],
+  declarations: [SsoLoginComponent],
   imports: [
     CommonModule,
-    SsoAuthenticationRoutingModule
-  ]
+    SsoAuthenticationRoutingModule,
+    // MatInputModule
+  ],
 })
-export class SsoAuthenticationModule { }
+export class SsoAuthenticationModule {}
