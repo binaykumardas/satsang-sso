@@ -92,6 +92,13 @@ body {
   font-size: var(--brand-font-size) !important;
   font-weight: var(--brand-font-weight) !important;
 }
+.btn-primary {
+  border: none !important;
+}
+
+.error-msg {
+  font-size: 0.8rem;
+}
 
 // **********responsive Codes************
 

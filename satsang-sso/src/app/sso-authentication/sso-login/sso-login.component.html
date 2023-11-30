@@ -6,7 +6,7 @@
           <h1>Satsang login</h1>
         </div>
         <div class="inpSec">
-          <form>
+          <form [formGroup]="loginForm">
             <div class="my-4">
               <label for="userId" class="form-label"
                 >User id/phone/email*</label
@@ -16,8 +16,12 @@
                 class="form-control bg-dark text-white"
                 id="userId"
                 aria-describedby="user ID"
+                formControlName="email"
                 placeholder="Enter your credentials"
-              />
+                required/>
+                <div *ngIf="(logInFrms['email'].touched || loginFormSubmitted) && logInFrms['email'].errors" class="form-control-errors">
+                  <p class="error-msg" *ngIf="logInFrms['email']['errors']['required']">This Field is required.</p>
+              </div>
             </div>
             <div class="my-4">
               <label for="userPwd" class="form-label">Password*</label>
@@ -25,10 +29,14 @@
                 type="password"
                 class="form-control bg-dark text-white"
                 id="userPwd"
+                formControlName="password"
                 placeholder="Enter your password"
-              />
+                required/>
+                <div *ngIf="(logInFrms['password'].touched || loginFormSubmitted) && logInFrms['password'].errors" class="form-control-errors">
+                  <p class="error-msg" *ngIf="logInFrms['password']['errors']['required']">This Field is required.</p>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary mb-3 w-100 brandBtn">
+            <button type="submit" class="btn btn-primary mb-3 w-100" (click)="userLogin()" [ngClass]="{'brandBtn': loginForm.valid, 'brand-btn-hide': !loginForm.valid}">
               Login
             </button>
           </form>
