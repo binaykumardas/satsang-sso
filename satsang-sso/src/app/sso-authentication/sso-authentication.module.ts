@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SsoAuthenticationRoutingModule } from './sso-authentication-routing.module';
 import { SsoLoginComponent } from './sso-login/sso-login.component';
+import { RouterModule } from '@angular/router';
 // import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
@@ -11,6 +12,7 @@ import { SsoLoginComponent } from './sso-login/sso-login.component';
     CommonModule,
     SsoAuthenticationRoutingModule,
     // MatInputModule
+    RouterModule,
   ],
 })
 export class SsoAuthenticationModule {}
