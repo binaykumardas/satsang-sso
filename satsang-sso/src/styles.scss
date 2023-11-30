@@ -1,1 +1,102 @@
 /* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: RecoLeta;
+  src: url("./assets/fonts/Recoleta-RegularDEMO.otf") format("truetype");
+}
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --bg-color: #101010;
+  --font-header: #ffffff;
+  --brand-primary: #edc99e;
+  --text-tertiary: #8f8b86;
+  --text-secondary: #d6d2ce;
+  --background-primary: #101010;
+  --border-primary: #edc99e33;
+  --border-secondary: rgba(255, 255, 255, 0.12);
+  --brand-font-size: 16px;
+  --brand-font-weight: 600;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+}
+
+// .dark-bg {
+//   background-color: var(--bg-color);
+// }
+
+.homeCommon {
+  height: 100vh;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  // flex-direction: column;
+  align-items: center;
+  // padding-block: 5rem;
+}
+
+.headTitle > h1 {
+  color: var(--font-header);
+  font-family: RecoLeta, sans-serif;
+}
+
+.form-label {
+  color: var(--text-secondary);
+  font-family: "Manrope", sans-serif;
+}
+
+.form-control:focus {
+  // border-color: rgba(255, 255, 255, 0.12) !important;
+  // box-shadow: 2px solid rgba(237, 201, 158, 0.2);
+  // box-shadow: 2px solid rgba(237, 201, 158, 0.2);
+  box-shadow: 0 0 0 0.2rem rgba(237, 201, 158, 0.2) !important;
+  border: 2px solid rgba(237, 201, 158, 0.2) !important;
+}
+.form-control {
+  border: 2px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-tertiary) !important;
+  opacity: 1;
+}
+
+.brandLink > a {
+  color: var(--brand-primary);
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.registerField p {
+  color: var(--text-tertiary);
+  font-family: "Manrope", sans-serif;
+}
+
+.loginSec {
+  padding: 1rem;
+  border: 1px solid var(--border-secondary);
+  border-radius: 10px;
+  width: 75% !important;
+}
+
+.brandBtn {
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+  color: var(--background-primary) !important;
+  font-size: var(--brand-font-size) !important;
+  font-weight: var(--brand-font-weight) !important;
+}
+
+// **********responsive Codes************
+
+@media only screen and (max-width: 999px) and (min-width: 279px) {
+  .loginSec {
+    width: 90% !important;
+  }
+}

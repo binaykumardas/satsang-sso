@@ -10,14 +10,27 @@ const ROUTES: Routes = [
         path: 'login',
         // canActivate: [AuthGuard],
         component: SsoLoginComponent,
-      }
-      
-    ]
-  }
+      },
+      {
+        path: 'register',
+        loadChildren: () =>
+          import('./sso-register/sso-register.module').then(
+            (m) => m.SsoRegisterModule
+          ),
+      },
+      {
+        path: 'reset',
+        loadChildren: () =>
+          import('./sso-reset-pwd/sso-reset-pwd.module').then(
+            (m) => m.SsoResetPwdModule
+          ),
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(ROUTES)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class SsoAuthenticationRoutingModule { }
+export class SsoAuthenticationRoutingModule {}
