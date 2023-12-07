@@ -71,7 +71,7 @@
           <label for="userId" class="form-label">User id/phone/email*</label>
           <input
             type="text"
-            class="form-control bg-dark text-white"
+            class="form-control inp-dark text-white"
             id="userId"
             aria-describedby="user ID"
             formControlName="email"
@@ -97,7 +97,7 @@
           <label for="userPwd" class="form-label">Password*</label>
           <input
             type="password"
-            class="form-control bg-dark text-white"
+            class="form-control inp-dark text-white"
             id="userPwd"
             formControlName="password"
             placeholder="Enter your password"
@@ -118,7 +118,12 @@
             </p>
           </div>
         </div>
-        <button type="submit" class="btn btnSub w-100" (click)="userLogin()">
+        <button
+          type="submit"
+          [ngClass]="logInFrms['password']['errors'] ? 'btnSub' : 'brandBtn'"
+          class="btn w-100"
+          (click)="userLogin()"
+        >
           Login
         </button>
       </form>

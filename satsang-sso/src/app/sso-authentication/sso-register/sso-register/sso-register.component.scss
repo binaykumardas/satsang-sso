@@ -1,0 +1,17 @@
+.btnSub {
+  display: flex;
+  height: 3rem;
+  padding: 0.625rem 1rem;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0.25rem;
+  background: var(--Separator, rgba(255, 255, 255, 0.12));
+  color: var(--Text-tertiary, #8f8b86);
+  font-family: Manrope;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.6875rem */
+  letter-spacing: 0.00363rem;
+}

@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { SsoRegisterRoutingModule } from './sso-register-routing.module';
 import { SsoRegisterComponent } from './sso-register/sso-register.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    SsoRegisterComponent
-  ],
+  declarations: [SsoRegisterComponent],
   imports: [
     CommonModule,
-    SsoRegisterRoutingModule
-  ]
+    SsoRegisterRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
-export class SsoRegisterModule { }
+export class SsoRegisterModule {}

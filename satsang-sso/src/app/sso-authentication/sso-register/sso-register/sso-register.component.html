@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-center homeCommon">
+<!-- <div class="d-flex align-items-center justify-content-center homeCommon">
   <div class="container h-100 content">
     <div class="row h-100 justify-content-center align-items-center">
       <div class="loginSec">
@@ -30,9 +30,7 @@
               Proceed
             </button>
           </form>
-          <!-- <div class="fgtPwd brandLink my-4 text-center">
-            <a href="#">Forgot Password?</a>
-          </div> -->
+         
         </div>
       </div>
 
@@ -43,6 +41,98 @@
             <a [routerLink]="['/login']">Login Now</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="divCenter">
+  <div class="enterSec">
+    <div class="headTitle">
+      <h1>Create Account</h1>
+      <p class="text-step">Step 1/4</p>
+    </div>
+    <div class="inpSecTwo">
+      <form [formGroup]="registerForm" class="inpForm">
+        <div class="inpFields">
+          <label for="userId" class="form-label">Family Code*</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userId"
+            aria-describedby="user ID"
+            formControlName="_fcode"
+            placeholder="Enter your family code"
+            required
+          />
+          <div
+            *ngIf="
+              (registerFrms['_fcode'].touched || loginFormSubmitted) &&
+              registerFrms['_fcode'].errors
+            "
+            class="form-control-errors"
+          >
+            <p
+              class="error-msg"
+              *ngIf="registerFrms['_fcode']['errors']['min']"
+            >
+              The Family Code is too short.
+            </p>
+            <p
+              class="error-msg"
+              *ngIf="registerFrms['_fcode']['errors']['required']"
+            >
+              This Field is required.
+            </p>
+            <p
+              class="error-msg"
+              *ngIf="registerFrms['_fcode']['errors']['max']"
+            >
+              The Family Code is too long.
+            </p>
+          </div>
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Full name*</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userPwd"
+            formControlName="_fname"
+            placeholder="Name as per arghya praswasti"
+            required
+          />
+          <div
+            *ngIf="
+              (registerFrms['_fname'].touched || loginFormSubmitted) &&
+              registerFrms['_fname'].errors
+            "
+            class="form-control-errors"
+          >
+            <p
+              class="error-msg"
+              *ngIf="registerFrms['_fname']['errors']['required']"
+            >
+              This Field is required.
+            </p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          [ngClass]="registerFrms['_fname']['errors'] ? 'btnSub' : 'brandBtn'"
+          class="btn w-100"
+          (click)="userLogin()"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="registerSec text-center">
+    <div class="registerField">
+      <p>Already registered with Satsang?</p>
+      <div class="brandLink">
+        <a [routerLink]="['/login']">Login now</a>
       </div>
     </div>
   </div>
