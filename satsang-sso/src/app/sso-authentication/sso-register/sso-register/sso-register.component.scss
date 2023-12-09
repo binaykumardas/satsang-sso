@@ -15,3 +15,7 @@
   line-height: 150%; /* 1.6875rem */
   letter-spacing: 0.00363rem;
 }
+
+.dropdown-toggle::after {
+  margin-left: 10rem !important;
+}
