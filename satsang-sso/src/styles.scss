@@ -13,6 +13,7 @@
   --text-tertiary: #8f8b86;
   --text-secondary: #d6d2ce;
   --background-primary: #101010;
+  --background-tertiary: rgba(40, 40, 40, 1);
   --border-primary: #edc99e33;
   --border-secondary: rgba(255, 255, 255, 0.12);
   --brand-font-size: 16px;
@@ -186,6 +187,40 @@ body {
   margin-bottom: 0;
 }
 
+.Select-style {
+  background-color: var(--background-tertiary) !important;
+  border: none !important;
+  border-radius: 0.25rem !important;
+  padding: 0.625rem 0.75rem !important;
+  font-size: 1.125rem !important;
+  color: var(--text-tertiary) !important;
+}
+
+.dropdown-menu.show {
+  display: block;
+  background-color: rgba(40, 40, 40, 1) !important;
+  color: #ffff !important;
+}
+
+.dropdown-item {
+  color: var(--text-tertiary) !important;
+}
+
+.form-control {
+  height: 3rem !important;
+}
+
+.form-select {
+  --bs-form-select-bg-img: url("./assets/imgs/arrow-204-48.png") !important;
+  background-color: var(--bs-body-bg);
+  background-image: url("./assets/imgs/arrow-204-48.png") !important;
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 13px !important;
+  background-color: rgba(40, 40, 40, 1) !important;
+  border: 0 !important;
+  color: var(--text-tertiary) !important;
+}
 // **************************************
 
 // **********responsive Codes************

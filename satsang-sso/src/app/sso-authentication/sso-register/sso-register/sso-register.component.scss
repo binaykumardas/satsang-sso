@@ -19,3 +19,37 @@
 .dropdown-toggle::after {
   margin-left: 10rem !important;
 }
+
+// .customerStyle select {
+//   background: transparent;
+//   // width: 170px;
+//   // padding: 5px;
+//   border: 0;
+//   // border-radius: 0;
+//   // height: 35px;
+// }
+
+// .customerStyle {
+//   background: "^" no-repeat right #ffffff;
+//   border: 1px solid #000;
+//   width: 100%;
+
+//   overflow: hidden;
+// }
+
+textarea.form-control {
+  background-color: rgba(40, 40, 40, 1) !important;
+  color: #ffff !important;
+}
+
+.phnSelectWithCodes {
+  display: flex;
+  width: 100%;
+}
+
+.phnSelectWithCodes > input {
+  margin-left: 0.5rem;
+}
+.phnSelectWithCodes > .form-select {
+  width: 6rem !important;
+}
