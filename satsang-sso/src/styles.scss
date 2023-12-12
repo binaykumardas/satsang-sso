@@ -13,6 +13,7 @@
   --text-tertiary: #8f8b86;
   --text-secondary: #d6d2ce;
   --background-primary: #101010;
+  --background-tertiary: rgba(40, 40, 40, 1);
   --border-primary: #edc99e33;
   --border-secondary: rgba(255, 255, 255, 0.12);
   --brand-font-size: 16px;
@@ -67,10 +68,11 @@ body {
 }
 
 .brandLink > a {
-  color: var(--brand-primary);
+  color: var(--brand-primary) !important;
   font-family: "Manrope", sans-serif;
   font-weight: 600;
   text-decoration: none;
+  font-size: 1.125rem;
 }
 
 .registerField p {
@@ -92,17 +94,150 @@ body {
   font-size: var(--brand-font-size) !important;
   font-weight: var(--brand-font-weight) !important;
 }
+
+.inp-dark {
+  background-color: var(--background-primary) !important;
+}
+
 .btn-primary {
   border: none !important;
 }
 
 .error-msg {
   font-size: 0.8rem;
+  color: #ff9a9a;
+  margin: 0;
 }
+
+// ********New edited Css Sec************
+
+.brand-btn-hide {
+  background: var(--Separator, rgba(255, 255, 255, 0.12));
+  color: #8f8b86;
+}
+
+.divCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.enterSec {
+  display: flex;
+  margin-top: 1rem;
+  width: 25rem;
+  padding: 1.5rem 2rem;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 0.75rem;
+  border: 1px solid var(--Separator, rgba(255, 255, 255, 0.12));
+  background: var(--Background-primary, #101010);
+}
+
+.inpSecTwo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: stretch;
+}
+
+.inpSecTwo > form {
+  width: 100%;
+}
+
+.inpFields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  align-self: stretch;
+  margin-block: 1.5rem;
+}
+
+.fgtPwd {
+  display: flex;
+  // height: 3rem;
+  padding: 0.625rem 1rem;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+}
+
+.fgtPwd > a {
+  color: var(--Brand-priamry, #edc99e);
+  font-family: Manrope;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 1.6875rem */
+  letter-spacing: 0.00363rem;
+}
+
+.text-step {
+  color: var(--Text-tertiary, #8f8b86);
+  font-family: Manrope;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 1.5rem */
+  letter-spacing: 0.00319rem;
+  margin-bottom: 0;
+}
+
+.Select-style {
+  background-color: var(--background-tertiary) !important;
+  border: none !important;
+  border-radius: 0.25rem !important;
+  padding: 0.625rem 0.75rem !important;
+  font-size: 1.125rem !important;
+  color: var(--text-tertiary) !important;
+}
+
+.dropdown-menu.show {
+  display: block;
+  background-color: rgba(40, 40, 40, 1) !important;
+  color: #ffff !important;
+}
+
+.dropdown-item {
+  color: var(--text-tertiary) !important;
+}
+
+.form-control {
+  height: 3rem !important;
+}
+
+.form-select {
+  --bs-form-select-bg-img: url("./assets/imgs/arrow-204-48.png") !important;
+  background-color: var(--bs-body-bg);
+  background-image: url("./assets/imgs/arrow-204-48.png") !important;
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 13px !important;
+  background-color: rgba(40, 40, 40, 1) !important;
+  border: 0 !important;
+  color: var(--text-tertiary) !important;
+}
+// **************************************
 
 // **********responsive Codes************
 
 @media only screen and (max-width: 999px) and (min-width: 279px) {
+  .divCenter {
+    margin-top: 0;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .enterSec {
+    display: flex;
+    margin-top: 0;
+    width: 20rem;
+  }
+
   .loginSec {
     width: 90% !important;
   }

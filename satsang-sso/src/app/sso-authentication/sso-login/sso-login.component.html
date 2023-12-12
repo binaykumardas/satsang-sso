@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-center homeCommon">
+<!-- <div class="d-flex align-items-center justify-content-center homeCommon">
   <div class="container h-100 content">
     <div class="row h-100 justify-content-center align-items-center">
       <div class="loginSec">
@@ -53,6 +53,90 @@
             <a [routerLink]="['/register']">Register Now</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- **********2nd part************* -->
+
+<div class="divCenter">
+  <div class="enterSec">
+    <div class="headTitle">
+      <h1>Satsang login</h1>
+    </div>
+    <div class="inpSecTwo">
+      <form [formGroup]="loginForm" class="inpForm">
+        <div class="inpFields">
+          <label for="userId" class="form-label">User id/phone/email*</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userId"
+            aria-describedby="user ID"
+            formControlName="email"
+            placeholder="Enter your credentials"
+            required
+          />
+          <div
+            *ngIf="
+              (logInFrms['email'].touched || loginFormSubmitted) &&
+              logInFrms['email'].errors
+            "
+            class="form-control-errors"
+          >
+            <p
+              class="error-msg"
+              *ngIf="logInFrms['email']['errors']['required']"
+            >
+              This Field is required.
+            </p>
+          </div>
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Password*</label>
+          <input
+            type="password"
+            class="form-control inp-dark text-white"
+            id="userPwd"
+            formControlName="password"
+            placeholder="Enter your password"
+            required
+          />
+          <div
+            *ngIf="
+              (logInFrms['password'].touched || loginFormSubmitted) &&
+              logInFrms['password'].errors
+            "
+            class="form-control-errors"
+          >
+            <p
+              class="error-msg"
+              *ngIf="logInFrms['password']['errors']['required']"
+            >
+              This Field is required.
+            </p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          [ngClass]="logInFrms['password']['errors'] ? 'btnSub' : 'brandBtn'"
+          class="btn w-100"
+          (click)="userLogin()"
+        >
+          Login
+        </button>
+      </form>
+      <div class="fgtPwd brandLink text-center">
+        <a [routerLink]="['/reset']">Forgot Password?</a>
+      </div>
+    </div>
+  </div>
+  <div class="registerSec text-center">
+    <div class="registerField">
+      <p>Not registered with Satsang?</p>
+      <div class="brandLink">
+        <a [routerLink]="['/register']">Register Now</a>
       </div>
     </div>
   </div>

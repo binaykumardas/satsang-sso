@@ -1,4 +1,4 @@
-<div class="d-flex align-items-center justify-content-center homeCommon">
+<!-- <div class="d-flex align-items-center justify-content-center homeCommon">
   <div class="container h-100 content">
     <div class="row h-100 justify-content-center align-items-center">
       <div class="loginSec">
@@ -30,9 +30,7 @@
               Proceed
             </button>
           </form>
-          <!-- <div class="fgtPwd brandLink my-4 text-center">
-            <a href="#">Forgot Password?</a>
-          </div> -->
+         
         </div>
       </div>
 
@@ -43,6 +41,360 @@
             <a [routerLink]="['/login']">Login Now</a>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Step-1  -->
+<div class="divCenter">
+  <div class="enterSec">
+    <div class="headTitle">
+      <h1>Create Account</h1>
+      <p class="text-step">Step 1/4</p>
+    </div>
+    <div class="inpSecTwo">
+      <form [formGroup]="registerForm" class="inpForm">
+        <div class="inpFields">
+          <label for="userId" class="form-label">Family Code*</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userId"
+            aria-describedby="user ID"
+            formControlName="_fcode"
+            placeholder="Enter your family code"
+            required
+          />
+          <div
+            *ngIf="
+              (registerFrms['_fcode'].touched || loginFormSubmitted) &&
+              registerFrms['_fcode'].errors
+            "
+            class="form-control-errors"
+          >
+            <p
+              class="error-msg"
+              *ngIf="registerFrms['_fcode']['errors']['min']"
+            >
+              The Family Code is too short.
+            </p>
+            <p
+              class="error-msg"
+              *ngIf="registerFrms['_fcode']['errors']['required']"
+            >
+              This Field is required.
+            </p>
+            <p
+              class="error-msg"
+              *ngIf="registerFrms['_fcode']['errors']['max']"
+            >
+              The Family Code is too long.
+            </p>
+          </div>
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Full name*</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userPwd"
+            formControlName="_fname"
+            placeholder="Name as per arghya praswasti"
+            required
+          />
+          <div
+            *ngIf="
+              (registerFrms['_fname'].touched || loginFormSubmitted) &&
+              registerFrms['_fname'].errors
+            "
+            class="form-control-errors"
+          >
+            <p
+              class="error-msg"
+              *ngIf="registerFrms['_fname']['errors']['required']"
+            >
+              This Field is required.
+            </p>
+          </div>
+        </div>
+        <button
+          type="submit"
+          [ngClass]="registerFrms['_fname']['errors'] ? 'btnSub' : 'brandBtn'"
+          class="btn w-100"
+          (click)="userLogin()"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="registerSec text-center">
+    <div class="registerField">
+      <p>Already registered with Satsang?</p>
+      <div class="brandLink">
+        <a [routerLink]="['/login']">Login now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step-2  -->
+<div class="divCenter">
+  <div class="enterSec">
+    <div class="headTitle">
+      <h1>Create Account</h1>
+      <p class="text-step">Step 2/4</p>
+    </div>
+    <div class="inpSecTwo">
+      <form [formGroup]="registerForm" class="inpForm">
+        <div class="inpFields">
+          <label for="userId" class="form-label">Country*</label>
+          <div class="customerStyle w-100">
+            <select
+              class="form-select Select-style form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+            >
+              <option class="dropdown-item" selected>
+                Open this select menu
+              </option>
+              <option class="dropdown-item" value="1">One</option>
+              <option class="dropdown-item" value="2">Two</option>
+              <option class="dropdown-item" value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Address*</label>
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+          ></textarea>
+        </div>
+        <div class="inpFields">
+          <label for="userId" class="form-label">Landmark(optional)</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userId"
+            aria-describedby="user ID"
+            formControlName="_fcode"
+            placeholder="Enter your family code"
+            required
+          />
+        </div>
+        <div class="inpFields">
+          <label for="userId" class="form-label">Pin Code*</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userId"
+            aria-describedby="user ID"
+            formControlName="_fcode"
+            placeholder="Enter your family code"
+            required
+          />
+        </div>
+        <div class="inpFields">
+          <label for="userId" class="form-label">State*</label>
+          <div class="customerStyle w-100">
+            <select
+              class="form-select Select-style form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+            >
+              <option class="dropdown-item" selected>
+                Open this select menu
+              </option>
+              <option class="dropdown-item" value="1">One</option>
+              <option class="dropdown-item" value="2">Two</option>
+              <option class="dropdown-item" value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <div class="inpFields">
+          <label for="userId" class="form-label">District*</label>
+          <div class="customerStyle w-100">
+            <select
+              class="form-select Select-style form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+            >
+              <option class="dropdown-item" selected>
+                Open this select menu
+              </option>
+              <option class="dropdown-item" value="1">One</option>
+              <option class="dropdown-item" value="2">Two</option>
+              <option class="dropdown-item" value="3">Three</option>
+            </select>
+          </div>
+        </div>
+        <button
+          type="submit"
+          [ngClass]="registerFrms['_fname']['errors'] ? 'btnSub' : 'brandBtn'"
+          class="btn w-100"
+          (click)="userLogin()"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="registerSec text-center">
+    <div class="registerField">
+      <p>Already registered with Satsang?</p>
+      <div class="brandLink">
+        <a [routerLink]="['/login']">Login now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step-3  -->
+<div class="divCenter">
+  <div class="enterSec">
+    <div class="headTitle">
+      <h1>Create Account</h1>
+      <p class="text-step">Step 3/4</p>
+    </div>
+    <div class="inpSecTwo">
+      <form [formGroup]="registerForm" class="inpForm">
+        <div class="inpFields">
+          <label for="userId" class="form-label">Phone number*</label>
+          <div class="phnSelectWithCodes">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Codes</option>
+              <option value="1">+91</option>
+              <option value="2">+92</option>
+              <option value="3">+93</option>
+            </select>
+            <input
+              type="text"
+              class="form-control inp-dark text-white"
+              id="userId"
+              aria-describedby="user ID"
+              formControlName="_fcode"
+              placeholder="00000 00000"
+              required
+            />
+          </div>
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Email*</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userPwd"
+            formControlName="_fname"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          [ngClass]="registerFrms['_fname']['errors'] ? 'btnSub' : 'brandBtn'"
+          class="btn w-100"
+          (click)="userLogin()"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="registerSec text-center">
+    <div class="registerField">
+      <p>Already registered with Satsang?</p>
+      <div class="brandLink">
+        <a [routerLink]="['/login']">Login now</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Step-4  -->
+<div class="divCenter">
+  <div class="enterSec">
+    <div class="headTitle">
+      <h1>Create Account</h1>
+      <p class="text-step">Step 4/4</p>
+    </div>
+    <div class="inpSecTwo">
+      <form [formGroup]="registerForm" class="inpForm">
+        <div class="inpFields">
+          <label for="userId" class="form-label">Username*</label>
+          <input
+            type="text"
+            class="form-control inp-dark text-white"
+            id="userId"
+            aria-describedby="user ID"
+            formControlName="_fcode"
+            placeholder="00000 00000"
+            required
+          />
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Date of birth*</label>
+          <input
+            type="date"
+            class="form-control inp-dark text-white"
+            id="userPwd"
+            formControlName="_fname"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Gender*</label>
+          <select
+            class="form-select Select-style form-select-lg mb-3"
+            aria-label=".form-select-lg example"
+          >
+            <option class="dropdown-item" selected>
+              Open this select menu
+            </option>
+            <option class="dropdown-item" value="1">Male</option>
+            <option class="dropdown-item" value="2">Female</option>
+            <option class="dropdown-item" value="3">Others</option>
+          </select>
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Create password*</label>
+          <input
+            type="password"
+            class="form-control inp-dark text-white"
+            id="userPwd"
+            formControlName="_fname"
+            placeholder="Enter a password"
+            required
+          />
+        </div>
+        <div class="inpFields">
+          <label for="userPwd" class="form-label">Confirm Password*</label>
+          <input
+            type="password"
+            class="form-control inp-dark text-white"
+            id="userPwd"
+            formControlName="_fname"
+            placeholder="Re-enter password"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          [ngClass]="registerFrms['_fname']['errors'] ? 'btnSub' : 'brandBtn'"
+          class="btn w-100"
+          (click)="userLogin()"
+        >
+          Create Account
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="registerSec text-center">
+    <div class="registerField">
+      <p>Already registered with Satsang?</p>
+      <div class="brandLink">
+        <a [routerLink]="['/login']">Login now</a>
       </div>
     </div>
   </div>
