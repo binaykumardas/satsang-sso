@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef } from '@angular/core';
 import {
   FormBuilder,
   FormControl,
@@ -12,8 +12,17 @@ import {
   styleUrls: ['./sso-register.component.scss'],
 })
 export class SsoRegisterComponent {
+
   public registerForm!: FormGroup;
+  //modalRef?: BsModalRef;
   public loginFormSubmitted: boolean = false;
+  public isPhoneOTPReceived: boolean = false;
+  public stepperObj = {
+    isStepOneCompleted: true,
+    isStepTwoCompleted: false,
+    isStepThreeCompleted: false,
+    isStepFourCompleted: false
+  }
   public get registerFrms() {
     return this.registerForm.controls;
   }
@@ -31,11 +40,40 @@ export class SsoRegisterComponent {
         Validators.max(999999999999),
         Validators.min(10000000000),
       ]),
-      _fname: new FormControl('', [Validators.required]),
+      _fname: new FormControl(''),
     });
+  }
+
+  public proceedToNext() {
+    if(this.stepperObj.isStepOneCompleted) {
+      this.stepperObj.isStepOneCompleted = false;
+      this.stepperObj.isStepTwoCompleted = true;
+      this.stepperObj.isStepThreeCompleted = false;
+      this.stepperObj.isStepFourCompleted = false;
+    } else if(this.stepperObj.isStepTwoCompleted) {
+        this.stepperObj.isStepOneCompleted = false;
+        this.stepperObj.isStepTwoCompleted = false;
+        this.stepperObj.isStepThreeCompleted = true;
+        this.stepperObj.isStepFourCompleted = false;
+    } else if(this.stepperObj.isStepThreeCompleted) {
+        this.stepperObj.isStepOneCompleted = false;
+        this.stepperObj.isStepTwoCompleted = false;
+        this.stepperObj.isStepThreeCompleted = false;
+        this.stepperObj.isStepFourCompleted = true;
+    }
+
+  }
+
+  public sendOTP() {
+    this.isPhoneOTPReceived = true;
+  }
+
+  public createAccount() {
+    //this.modalRef = this.modalService.show(template);
   }
 
   public userLogin(): void {
     this.loginFormSubmitted = true;
   }
+  
 }

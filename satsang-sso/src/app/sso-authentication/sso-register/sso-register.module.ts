@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SsoRegisterRoutingModule } from './sso-register-routing.module';
 import { SsoRegisterComponent } from './sso-register/sso-register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [SsoRegisterComponent],
@@ -11,7 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     SsoRegisterRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
 })
 export class SsoRegisterModule {}
